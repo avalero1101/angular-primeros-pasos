@@ -1,0 +1,13 @@
+<h4>Agregar personaje</h4>
+<form action="" class="row" (ngSubmit)="emitCharacter()">
+  <!--[()] se usa para asociar un evento y un atributo al mismo tiempo, es el two way dataBinding para conectar en los dos sentidos, cambia
+  el valor del atributo en el ts y cuando se cambia en ts también se cambia aquí-->
+  <input type="text" [(ngModel)]="character.name" class="form-control mb-2" name="nombre" id="nombre"  placeholder="Nombre">
+  <input type="number" [(ngModel)]="character.power" class="form-control mb-2" name="poder" id="poder"  placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary">Agregar</button>
+
+
+  <!--Para ver como funciona el two way dataBinding mostramos aquí el objeto character con su contenido-->
+  <pre>{{character | json}}</pre>
+</form>

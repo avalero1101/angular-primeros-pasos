@@ -1,0 +1,24 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <li *ngFor="let character of characterList;
+    index as i;
+    let isLast = last;
+    let isFirst = first;
+    "
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+    'list-group-item-dark': isLast,
+    'list-group-item-primary': isFirst
+    }"
+    >
+    <div>
+      <!--"index as i" recoge el índice de cada elemento, igual que last o even(par) index es una propiedad propia del for-->
+      <!--[ngClass] permite añadir una clase de bootstrap o de css si se cumple una condición-->
+      <span class="text-primary"> {{i + 1}}. </span>
+      <span>{{ character.name }} - </span>
+      <strong>Power: </strong>
+      <span>{{ character.power }}</span>
+    </div>
+    <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+  </li>
+</ul>

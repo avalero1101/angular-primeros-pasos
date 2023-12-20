@@ -1,0 +1,12 @@
+<h1>DBZ Personajes</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <dbz-list [characterList]="characters" (onNewIdCharacter)="onDeleteCharacter($event)"></dbz-list><!--Aquí relacionamos al hijo(list) con el padre(main-page), para indicar que es lo que recibe del padre y donde lo recibe-->
+  </div>
+  <div class="col">
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character><!--Aquí el padre recibe del hijo. El personaje es recibido por el padre
+    Escuchamos el evento, por eso se usan paréntesis; en este caso pide recibir un objeto de tipo Character, pero podría ser cualquier tipo de objeto.
+    Se pone $event porque es un nombre específico de Angular que sabe para que valor se está emitiendo -->
+  </div>
+</div>
